@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="display: flex;">
+    
+    <div>
+        <canvas id="chartLinha" style="position: relative; height:40vh; width:50vw"></canvas>
+    </div>
+    <br>
+    <div>
+        <canvas id="chartBarra" style="position: relative; height:40vh; width:50vw"></canvas>
+    </div>
+
+</body>
+</html>
+
+<script>
+//linha
+const labelsL = [
+    '12:00',
+    '13:00',
+    '14:00',
+    '15:00',
+    '16:00',
+    '17:00',
+  ];
+
+  const dataL = {
+    labels: labelsL,
+    datasets: [{
+      label: 'Temperatura',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [30, 29, 28, 25, 22, 23],
+    },{
+      label: 'Umidade',
+      backgroundColor: 'rgb(20, 0, 200)',
+      borderColor: 'rgb(20, 0, 200)',
+      data: [80, 82, 80, 85, 80, 80, 83],
+    }
+  ]
+  };
+
+  const configL = {
+    type: 'line',
+    data: dataL,
+    options: {}
+  };
+
+  const myChartL = new Chart(
+    document.getElementById('chartLinha'),
+    configL
+  );
+//
+//barra
+
+</script>
+
+<script>
+  const labelsB = [
+    'Janeiro',
+    'Fevereiro',
+    'Março',
+    'Abril',
+    'Maio',
+    'Junho',
+  ];
+
+  const dataB = {
+    labels: labelsB,
+    datasets: [{
+      label: 'Temperatura Média',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [22, 24, 27, 23, 20, 18],
+    },{
+      label: 'Umidade Média',
+      backgroundColor: 'rgb(20, 0, 200)',
+      borderColor: 'rgb(20, 0, 200)',
+      data: [90, 89, 93, 85, 87, 88, 82],
+    }
+  ]
+  };
+
+  const configB = {
+    type: 'bar',
+    data: dataB,
+    options: {}
+  };
+
+  const myChart = new Chart(
+    document.getElementById('chartBarra'),
+    configB
+  );
+</script>
